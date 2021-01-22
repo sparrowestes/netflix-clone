@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "./axios";
-import requests from "./requests";
+import axios from "../axios";
+import requests from "../requests";
 import "./Banner.css";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
@@ -37,7 +37,7 @@ function Banner() {
     } else {
       movieTrailer(movie?.name || movie?.title || "")
         .then((url) => {
-          //http:www.youtube.com/watch?v=XtMthy8QKqU
+          //https:www.youtube.com/watch?v=XtMthy8QKqU
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerUrl(urlParams.get("v"));
         })
@@ -56,7 +56,7 @@ function Banner() {
         className='banner-container'
         style={{
           backgroundSize: "cover",
-          backgroundImage: `url("http://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
+          backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
           backgroundPosition: "center center",
         }}
       >
