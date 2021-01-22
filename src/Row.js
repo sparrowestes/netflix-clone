@@ -4,7 +4,7 @@ import "./Row.css";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
 
-const base_url = "http://image.tmdb.org/t/p/original/";
+const base_url = "https://image.tmdb.org/t/p/original/";
 
 function Row({ title, fetchURL, isLargeRow }) {
   const [movies, setMovies] = useState([]);
@@ -34,7 +34,7 @@ function Row({ title, fetchURL, isLargeRow }) {
     } else {
       movieTrailer(movie?.name || movie?.title || "")
         .then((url) => {
-          //http:www.youtube.com/watch?v=XtMthy8QKqU
+          //https:www.youtube.com/watch?v=XtMthy8QKqU
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerUrl(urlParams.get("v"));
         })
